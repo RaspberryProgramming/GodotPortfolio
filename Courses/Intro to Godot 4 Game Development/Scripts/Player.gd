@@ -1,17 +1,21 @@
-extends Sprite2D
+extends CharacterBody2D
 
-var _speed : float = 30; # Pix a second
-var _timer : float = 0;
-# Called when the node enters the scene tree for the first time.
-func _ready():
-  var vec = Vector2(500, 200)
-  global_position = vec
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-  _timer += delta
-  print(_timer)
+func _physics_process(delta):
+  velocity.x = 0
+  velocity.y = 0
   
-  var direction = Vector2(1, 1)
-  global_position += direction * (_speed * delta)
+  if Input.is_key_pressed(KEY_LEFT):
+    velocity.x -= 1
+  
+  if Input.is_key_pressed(KEY_RIGHT):
+    velocity.x += 1
+  
+  if Input.is_key_pressed(KEY_UP):
+    velocity.y -= 1
+  
+  if Input.is_key_pressed(KEY_DOWN):
+    velocity.y += 1
+
+  velocity *= 50
+
+  move_and_slide()
