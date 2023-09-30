@@ -3,4 +3,4 @@ Collection of godot projects from different courses I am taking and projects I'm
 
 # List of Courses
 
-Intro to Godot 4 Game Development [Link)(https://academy.zenva.com/course/intro-to-godot-4-game-development/)
+Intro to Godot 4 Game Development [Link](https://academy.zenva.com/course/intro-to-godot-4-game-development/)
