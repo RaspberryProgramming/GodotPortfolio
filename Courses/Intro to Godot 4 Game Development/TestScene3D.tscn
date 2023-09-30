@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://1bnyfnkx6nk0"]
+[gd_scene load_steps=6 format=3 uid="uid://1bnyfnkx6nk0"]
 
 [ext_resource type="Material" uid="uid://dlqhg36evhl2r" path="res://Materials/PinkBall.tres" id="1_w2elk"]
 [ext_resource type="Material" uid="uid://due2lqxgrl5cy" path="res://Materials/BlueTransparent.tres" id="1_xdl6r"]
 [ext_resource type="Material" uid="uid://bql7oqaqqvq4e" path="res://Materials/TextureBall.tres" id="3_agy26"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vaua3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yn2e1"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -21,3 +23,25 @@ mesh = SubResource("SphereMesh_vaua3")
 transform = Transform3D(-0.267709, 0, -0.9635, 0, 1, 0, 0.9635, 0, -0.267709, 0, 0, -1.45107)
 material_override = ExtResource("3_agy26")
 mesh = SubResource("SphereMesh_vaua3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.612176, 0.790722, 0, -0.790722, 0.612176, 2.28262, 0.983489, 1.07825)
+light_color = Color(0.921569, 0.101961, 0.164706, 1)
+light_energy = 9.076
+shadow_enabled = true
+omni_range = 3.864
+
+[node name="SpotLight3D" type="SpotLight3D" parent="OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 0.904931, -0.425558, 0, 0.425558, 0.904931, -2.30314, -1.29684, 1.31339)
+light_color = Color(0.384314, 0.878431, 0.298039, 1)
+light_energy = 1.762
+shadow_enabled = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.612176, 0.790722, 0, -0.790722, 0.612176, 0, 2.17611, 1.61324)
+light_color = Color(0.964706, 0.854902, 0.643137, 1)
+light_energy = 0.086
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.596082, 0)
+mesh = SubResource("PlaneMesh_yn2e1")
