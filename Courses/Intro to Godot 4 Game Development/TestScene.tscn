@@ -5,15 +5,3 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_m6646")]
-
-[node name="Player2" parent="." instance=ExtResource("1_m6646")]
-position = Vector2(90, 121)
-
-[node name="Player3" parent="." instance=ExtResource("1_m6646")]
-position = Vector2(-45, 102)
-
-[node name="Player4" parent="." instance=ExtResource("1_m6646")]
-position = Vector2(101, 19)
-
-[node name="Player5" parent="." instance=ExtResource("1_m6646")]
-position = Vector2(-62, 6)
