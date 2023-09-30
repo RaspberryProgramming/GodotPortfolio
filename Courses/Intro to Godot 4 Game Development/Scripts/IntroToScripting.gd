@@ -1,20 +1,17 @@
 extends Node2D
 
-var score : int = 5
+var score : int = 75
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  if score == 10:
-    print("You win!")
+  var game_over = _has_won(120)
+  print(game_over)
   
-  if score > 5:
-    print("Score is greater than 5")
-    
-  var a : int = 50
-  var b : int = 100
-
-  if a < b:
-    print("a is less than b")  
+func _has_won(score):
+  if score >= 100:
+    return true
+  else:
+    return false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
