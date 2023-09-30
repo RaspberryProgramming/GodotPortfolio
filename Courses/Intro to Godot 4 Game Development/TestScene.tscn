@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnji61lx5142"]
+[gd_scene load_steps=3 format=3 uid="uid://cnji61lx5142"]
 
 [ext_resource type="PackedScene" uid="uid://cr41v8xnbpmn8" path="res://Player.tscn" id="1_m6646"]
+[ext_resource type="PackedScene" uid="uid://ciysbeipa2oso" path="res://coin.tscn" id="2_sm6hf"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_m6646")]
+
+[node name="Coin" parent="." instance=ExtResource("2_sm6hf")]
+position = Vector2(-199, 12)
+
+[node name="Coin2" parent="." instance=ExtResource("2_sm6hf")]
+position = Vector2(196, -100)
+
+[node name="Coin3" parent="." instance=ExtResource("2_sm6hf")]
+position = Vector2(-559, -159)
+
+[node name="Coin4" parent="." instance=ExtResource("2_sm6hf")]
+position = Vector2(-211, -107)
+
+[node name="Coin5" parent="." instance=ExtResource("2_sm6hf")]
+position = Vector2(507, 161)
