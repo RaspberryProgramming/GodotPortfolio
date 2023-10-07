@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4tbjjanktse5"]
+[gd_scene load_steps=5 format=3 uid="uid://b4tbjjanktse5"]
 
 [ext_resource type="Script" path="res://Physics/PhysicsPlayer.gd" id="1_nqxvg"]
 [ext_resource type="Texture2D" uid="uid://csgwpwat4c1nq" path="res://Assets/PhysicsCharacter.png" id="1_nyv6p"]
+[ext_resource type="PackedScene" uid="uid://cto3bugk4nstc" path="res://Physics/crate.tscn" id="3_oivbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwesq"]
 size = Vector2(18, 18)
@@ -22,3 +23,48 @@ shape = SubResource("RectangleShape2D_pwesq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="Crate" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(48, -12)
+
+[node name="Crate5" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-106, 30)
+
+[node name="Crate4" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-53, 77)
+
+[node name="Crate3" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(10, 62)
+
+[node name="Crate2" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-31, -23)
+
+[node name="Crate7" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-78, 4)
+
+[node name="Crate6" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(83, -11)
+
+[node name="Crate8" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-45, 30)
+
+[node name="Crate9" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(28, 35)
+
+[node name="Crate10" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(13, -63)
+
+[node name="Crate11" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-32, -49)
+
+[node name="Crate12" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(61, 39)
+
+[node name="Crate13" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-79, 17)
+
+[node name="Crate14" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(86, -43)
+
+[node name="Crate15" parent="." instance=ExtResource("3_oivbh")]
+position = Vector2(-112, -43)
