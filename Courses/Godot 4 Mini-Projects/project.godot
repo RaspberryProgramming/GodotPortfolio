@@ -14,3 +14,7 @@ config/name="Godot 4 Mini-projects"
 run/main_scene="res://Balloon Popper/BaloonPopper.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Godot 4 Mini-projects"
