@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5o2wycwkfdln"]
+[gd_scene load_steps=6 format=3 uid="uid://c5o2wycwkfdln"]
 
 [ext_resource type="Material" uid="uid://chu8cxw7bg3p2" path="res://Balloon Popper/Balloon.tres" id="1_g35fd"]
+[ext_resource type="Script" path="res://Balloon Popper/BalloonManager.gd" id="1_hpyod"]
 [ext_resource type="Script" path="res://Balloon Popper/Balloon.gd" id="1_x2lxi"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ifjd7"]
@@ -8,6 +9,31 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_idy11"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_hpyod")
+
+[node name="Balloon2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85689, 1.30167, 0.00893724)
+script = ExtResource("1_x2lxi")
+
+[node name="Model" type="MeshInstance3D" parent="Balloon2"]
+material_override = ExtResource("1_g35fd")
+mesh = SubResource("SphereMesh_ifjd7")
+skeleton = NodePath("../../Balloon2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon2"]
+shape = SubResource("SphereShape3D_idy11")
+
+[node name="Balloon5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66431, -0.311429, 0.0635872)
+script = ExtResource("1_x2lxi")
+
+[node name="Model" type="MeshInstance3D" parent="Balloon5"]
+material_override = ExtResource("1_g35fd")
+mesh = SubResource("SphereMesh_ifjd7")
+skeleton = NodePath("../../Balloon5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon5"]
+shape = SubResource("SphereShape3D_idy11")
 
 [node name="Balloon" type="Area3D" parent="."]
 script = ExtResource("1_x2lxi")
@@ -25,4 +51,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.98479)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.58263, 0.500924, -0.640013, -0.148293, 0.839781, 0.522281, 0.799094, -0.209387, 0.563565, -4.66126, 1.87067, 1.74819)
 
+[node name="Balloon4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34365, 1.11844, -0.0924969)
+script = ExtResource("1_x2lxi")
+
+[node name="Model" type="MeshInstance3D" parent="Balloon4"]
+material_override = ExtResource("1_g35fd")
+mesh = SubResource("SphereMesh_ifjd7")
+skeleton = NodePath("../../Balloon4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon4"]
+shape = SubResource("SphereShape3D_idy11")
+
+[node name="Balloon3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0580347, 1.23256, 0.191772)
+script = ExtResource("1_x2lxi")
+
+[node name="Model" type="MeshInstance3D" parent="Balloon3"]
+material_override = ExtResource("1_g35fd")
+mesh = SubResource("SphereMesh_ifjd7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon3"]
+shape = SubResource("SphereShape3D_idy11")
+
+[connection signal="input_event" from="Balloon2" to="Balloon2" method="_on_input_event"]
+[connection signal="input_event" from="Balloon5" to="Balloon5" method="_on_input_event"]
 [connection signal="input_event" from="Balloon" to="Balloon" method="_on_input_event"]
+[connection signal="input_event" from="Balloon4" to="Balloon4" method="_on_input_event"]
+[connection signal="input_event" from="Balloon3" to="Balloon3" method="_on_input_event"]
