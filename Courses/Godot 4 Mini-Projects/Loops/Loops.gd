@@ -1,8 +1,18 @@
 extends Node2D
 
-func _ready():
-  var score:int = 0
-  for i in 10:
-    score += 5
+@export var spawn_count : int = 200
+var star_scene = preload("res://Loops/Star.tscn")
 
-  print(score)
+func _ready():
+  for i in spawn_count:
+    var star = star_scene.instantiate()
+    
+    add_child(star)
+    
+    star.position.x = randi_range(-280, 280)
+    star.position.y = randi_range(-150, 150)
+    
+    var star_size: float = randf_range(0.5, 1.0)
+    star.scale.x = star_size
+    star.scale.y = star_size
+    
