@@ -4,6 +4,8 @@ var move_speed : float = 100.0
 var jump_force : float = 200.0
 var gravity : float = 500.0
 
+var score : int = 0
+
 func _physics_process(delta):
   if not is_on_floor():
     velocity.y += gravity * delta
@@ -27,3 +29,6 @@ func _physics_process(delta):
 func game_over():
   # Reload scene when game over
   get_tree().reload_current_scene()
+
+func add_score(amount):
+  score += amount
