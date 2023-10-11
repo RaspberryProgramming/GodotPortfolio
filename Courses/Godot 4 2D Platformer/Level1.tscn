@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkce7f46s206b"]
+[gd_scene load_steps=11 format=3 uid="uid://bkce7f46s206b"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dvila"]
 [ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://Sprites/Characters/character_0004.png" id="2_f1qyx"]
 [ext_resource type="Script" path="res://Player.gd" id="2_ydxc4"]
 [ext_resource type="PackedScene" uid="uid://bsh8chy26bcbl" path="res://Enemy.tscn" id="4_ah4oq"]
+[ext_resource type="Script" path="res://Spikes.gd" id="5_8ebpp"]
+[ext_resource type="Texture2D" uid="uid://bj4phc7ceh37p" path="res://Sprites/Objects/tile_0068.png" id="5_umanj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gfham"]
 texture = ExtResource("1_dvila")
@@ -656,6 +658,9 @@ sources/0 = SubResource("TileSetAtlasSource_gfham")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyfp8"]
 height = 24.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71u1c"]
+size = Vector2(18, 9)
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -684,3 +689,16 @@ position = Vector2(-83, 20)
 
 [node name="Enemy3" parent="." instance=ExtResource("4_ah4oq")]
 position = Vector2(247, 36)
+
+[node name="Spikes" type="Area2D" parent="."]
+position = Vector2(63, 27)
+script = ExtResource("5_8ebpp")
+
+[node name="Sprite" type="Sprite2D" parent="Spikes"]
+texture = ExtResource("5_umanj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_71u1c")
+
+[connection signal="body_entered" from="Spikes" to="Spikes" method="_on_body_entered"]
