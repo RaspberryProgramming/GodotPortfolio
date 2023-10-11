@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkce7f46s206b"]
+[gd_scene load_steps=11 format=3 uid="uid://bkce7f46s206b"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dvila"]
 [ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://Sprites/Characters/character_0004.png" id="2_f1qyx"]
 [ext_resource type="Script" path="res://Player.gd" id="2_ydxc4"]
 [ext_resource type="PackedScene" uid="uid://bsh8chy26bcbl" path="res://Enemy.tscn" id="4_ah4oq"]
 [ext_resource type="PackedScene" uid="uid://cv4qgjkybogci" path="res://Spikes.tscn" id="5_h5hp2"]
-[ext_resource type="Texture2D" uid="uid://ydbe1tyhvygu" path="res://Sprites/Objects/tile_0151.png" id="6_16jf2"]
-[ext_resource type="Script" path="res://Coin.gd" id="6_qj6a2"]
+[ext_resource type="PackedScene" uid="uid://d0f6j1ido8ea3" path="res://Coin.tscn" id="6_2dxin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gfham"]
 texture = ExtResource("1_dvila")
@@ -659,8 +658,10 @@ sources/0 = SubResource("TileSetAtlasSource_gfham")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyfp8"]
 height = 24.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yeaqh"]
-radius = 7.0
+[sub_resource type="LabelSettings" id="LabelSettings_rmdye"]
+font_size = 48
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -681,6 +682,16 @@ texture = ExtResource("2_f1qyx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_yyfp8")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="ScoreText" type="Label" parent="Player/CanvasLayer"]
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 187.0
+offset_bottom = 73.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_rmdye")
+
 [node name="Enemy" parent="." instance=ExtResource("4_ah4oq")]
 position = Vector2(88, 24)
 move_dir = Vector2(50, 0)
@@ -693,14 +704,10 @@ position = Vector2(247, 36)
 
 [node name="Spikes" parent="." instance=ExtResource("5_h5hp2")]
 
-[node name="Coin" type="Area2D" parent="."]
-position = Vector2(-165, 23)
-script = ExtResource("6_qj6a2")
+[node name="Coin" parent="." instance=ExtResource("6_2dxin")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coin"]
-texture = ExtResource("6_16jf2")
+[node name="Coin2" parent="." instance=ExtResource("6_2dxin")]
+position = Vector2(-49, 23)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin"]
-shape = SubResource("CircleShape2D_yeaqh")
-
-[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
+[node name="Coin3" parent="." instance=ExtResource("6_2dxin")]
+position = Vector2(-133, 23)
