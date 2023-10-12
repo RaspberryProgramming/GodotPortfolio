@@ -8,3 +8,5 @@ Intro to Godot 4 Game Development [Link](https://academy.zenva.com/course/intro-
 Godot 4 Mini Projects [Link](https://academy.zenva.com/course/godot-4-mini-projects/)
 
 Create a 2D Platformer with Godot 4 [Link](https://academy.zenva.com/course/create-a-2d-platformer-with-godot-4/)
+
+Develop a 3D Platformer with Godot 4 [Link](https://academy.zenva.com/course/develop-a-3d-platformer-with-godot-4/)
