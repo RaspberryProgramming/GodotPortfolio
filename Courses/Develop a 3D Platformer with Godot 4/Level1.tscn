@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn765bhrkxymr"]
+[gd_scene load_steps=5 format=3 uid="uid://bn765bhrkxymr"]
 
-[ext_resource type="PackedScene" uid="uid://cjj3wjwh7hx4d" path="res://PlatformLarge.tscn" id="1_p1lf6"]
+[ext_resource type="PackedScene" uid="uid://cjj3wjwh7hx4d" path="res://Platforms/PlatformLarge.tscn" id="1_p1lf6"]
 [ext_resource type="PackedScene" uid="uid://c86satyg74wbu" path="res://Player.tscn" id="2_w2dma"]
 [ext_resource type="PackedScene" uid="uid://cx6gi2ma1dhbj" path="res://Enemy.tscn" id="3_6rc6a"]
+[ext_resource type="PackedScene" uid="uid://tjgracdgb3gs" path="res://Spikes.tscn" id="4_f1uo2"]
 
 [node name="Main" type="Node3D"]
 
@@ -47,3 +48,12 @@ move_speed = 3.0
 [node name="Enemy3" parent="." instance=ExtResource("3_6rc6a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79056, 0.445736, -9.25031)
 move_speed = 1.5
+
+[node name="Spikes" parent="." instance=ExtResource("4_f1uo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.489076, 1.89702, -9.67701)
+
+[node name="Spikes2" parent="." instance=ExtResource("4_f1uo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59646, 1.89702, -8.81533)
+
+[node name="Spikes3" parent="." instance=ExtResource("4_f1uo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7228, 1.89702, -9.6454)
