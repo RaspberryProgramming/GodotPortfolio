@@ -1,47 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn765bhrkxymr"]
+[gd_scene load_steps=4 format=3 uid="uid://bn765bhrkxymr"]
 
 [ext_resource type="PackedScene" uid="uid://cjj3wjwh7hx4d" path="res://PlatformLarge.tscn" id="1_p1lf6"]
-[ext_resource type="Script" path="res://Player.gd" id="2_adpy0"]
-[ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://Models/characterVampire.obj" id="2_l6sr5"]
-[ext_resource type="Script" path="res://Enemy.gd" id="4_6t2ym"]
-[ext_resource type="ArrayMesh" uid="uid://mvd3ie23bw83" path="res://Models/spikeBlock.obj" id="4_m0odj"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3sioa"]
-radius = 0.379498
-height = 1.30507
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xghdv"]
-albedo_color = Color(0.886275, 0.886275, 0.886275, 1)
-metallic = 1.0
-metallic_specular = 0.0
-roughness = 0.4
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_od36q"]
-albedo_color = Color(0.713726, 0, 0.00392157, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lud8l"]
-size = Vector3(0.8, 0.8, 0.8)
+[ext_resource type="PackedScene" uid="uid://c86satyg74wbu" path="res://Player.tscn" id="2_w2dma"]
+[ext_resource type="PackedScene" uid="uid://cx6gi2ma1dhbj" path="res://Enemy.tscn" id="3_6rc6a"]
 
 [node name="Main" type="Node3D"]
 
 [node name="PlatformLarge" parent="." instance=ExtResource("1_p1lf6")]
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0134, 0)
-script = ExtResource("2_adpy0")
-
-[node name="Model" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-mesh = ExtResource("2_l6sr5")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.655632, 0)
-shape = SubResource("CapsuleShape3D_3sioa")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.975446, 0.220238, 0, -0.220238, 0.975446, 0, 2.22215, 4.69641)
-fov = 60.0
+[node name="Player" parent="." instance=ExtResource("2_w2dma")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.659215, -0.593823, 0.461314, 1.77636e-15, 0.613486, 0.789705, -0.751955, -0.520585, 0.404419, 0, 4.89704, 1.73172)
@@ -71,17 +38,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58333, 0.867976, -9.27871)
 [node name="PlatformLarge9" parent="." instance=ExtResource("1_p1lf6")]
 transform = Transform3D(0.915044, 0, -0.403354, 0, 1, 0, 0.403354, 0, 0.915044, 6.86502, 0.867976, -8.76384)
 
-[node name="Enemy" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84532, 0.445736, -0.646955)
-script = ExtResource("4_6t2ym")
-move_dir = Vector3(0, 3, 0)
+[node name="Enemy" parent="." instance=ExtResource("3_6rc6a")]
 
-[node name="Model" type="MeshInstance3D" parent="Enemy"]
-mesh = ExtResource("4_m0odj")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_xghdv")
-surface_material_override/1 = SubResource("StandardMaterial3D_od36q")
+[node name="Enemy2" parent="." instance=ExtResource("3_6rc6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42106, 0.445736, -9.25031)
+move_speed = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_lud8l")
+[node name="Enemy3" parent="." instance=ExtResource("3_6rc6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79056, 0.445736, -9.25031)
+move_speed = 1.5
