@@ -29,7 +29,8 @@ offset_right = 87.0
 offset_bottom = 113.0
 theme_override_styles/background = SubResource("StyleBoxFlat_b7bd4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_n8gtg")
-value = 50.0
+max_value = 25.0
+value = 25.0
 show_percentage = false
 
 [node name="Healthtext" type="Label" parent="HealthBar"]
