@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://tkn4lnp02e"]
+
+[ext_resource type="PackedScene" uid="uid://cjj3wjwh7hx4d" path="res://Platforms/PlatformLarge.tscn" id="1_yyse5"]
+[ext_resource type="PackedScene" uid="uid://cbuisqkimyfed" path="res://Coin.tscn" id="2_wpfuo"]
+[ext_resource type="PackedScene" uid="uid://bbmh2jreq7i57" path="res://EndFlag.tscn" id="3_evy4o"]
+[ext_resource type="PackedScene" uid="uid://cx6gi2ma1dhbj" path="res://Enemy.tscn" id="4_y8y14"]
+[ext_resource type="PackedScene" uid="uid://c86satyg74wbu" path="res://Player.tscn" id="5_6854t"]
+[ext_resource type="PackedScene" uid="uid://tjgracdgb3gs" path="res://Spikes.tscn" id="6_g4orc"]
+
+[sub_resource type="Environment" id="Environment_2uaf0"]
+background_mode = 1
+background_color = Color(0.309804, 0.541176, 0.780392, 1)
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360889, 0, -0.0647354)
+
+[node name="PlatformLarge" parent="." instance=ExtResource("1_yyse5")]
+
+[node name="PlatformLarge2" parent="." instance=ExtResource("1_yyse5")]
+transform = Transform3D(0.931514, 0, -0.363706, 0, 1, 0, 0.363706, 0, 0.931514, -2.96124, 0, -3.34104)
+
+[node name="PlatformLarge3" parent="." instance=ExtResource("1_yyse5")]
+transform = Transform3D(0.931514, 0, -0.363706, 0, 1, 0, 0.363706, 0, 0.931514, -1.26313, 0, -6.7396)
+
+[node name="PlatformLarge4" parent="." instance=ExtResource("1_yyse5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74532, 0, -8.61895)
+
+[node name="PlatformLarge7" parent="." instance=ExtResource("1_yyse5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7386, 1.86573, -8.61895)
+
+[node name="PlatformLarge5" parent="." instance=ExtResource("1_yyse5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14513, 0, -8.61895)
+
+[node name="PlatformLarge6" parent="." instance=ExtResource("1_yyse5")]
+transform = Transform3D(0.856051, 0.516892, 0, -0.516892, 0.856051, 0, 0, 0, 1, -11.8394, 0.97799, -8.61895)
+
+[node name="Coin" parent="." instance=ExtResource("2_wpfuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94343, 1.18126, -3.4206)
+
+[node name="Coin2" parent="." instance=ExtResource("2_wpfuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.138, 1.18126, -6.90394)
+
+[node name="Coin3" parent="." instance=ExtResource("2_wpfuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86697, 1.18126, -8.51602)
+
+[node name="Coin4" parent="." instance=ExtResource("2_wpfuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55906, 1.18126, -8.51602)
+
+[node name="Coin5" parent="." instance=ExtResource("2_wpfuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3979, 2.18648, -8.51602)
+
+[node name="Coin6" parent="." instance=ExtResource("2_wpfuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2163, 3.03647, -8.21449)
+
+[node name="Enemy" parent="." instance=ExtResource("4_y8y14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80133, 0.358075, -8.69319)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_y8y14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681781, 0.358075, -2.47142)
+
+[node name="Player" parent="." instance=ExtResource("5_6854t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0778732, 1.41216, 0.00407112)
+
+[node name="Spikes" parent="." instance=ExtResource("6_g4orc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.51567, 1.00518, -9.17358)
+
+[node name="Spikes2" parent="." instance=ExtResource("6_g4orc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16575, 1.00518, -9.19585)
+
+[node name="EndFlag" parent="." instance=ExtResource("3_evy4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1258, 3.42553, -8.62549)
+next_scene = "res://Level1.tscn"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.659215, -0.593823, 0.461314, 1.77636e-15, 0.613486, 0.789705, -0.751955, -0.520585, 0.404419, 0, 4.89704, 1.73172)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2uaf0")

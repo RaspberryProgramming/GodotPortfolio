@@ -88,7 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46885, 2.07362, -8.51608)
 
 [node name="EndFlag" parent="." instance=ExtResource("6_sxlfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.38107, 2.48607, -5.72547)
-next_scene = "res://Level1.tscn"
+next_scene = "res://Level2.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_omm7g")
