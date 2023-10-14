@@ -13,7 +13,6 @@ radius = 0.305122
 [sub_resource type="Environment" id="Environment_omm7g"]
 background_mode = 1
 background_color = Color(0.486275, 0.784314, 0.847059, 1)
-ssr_enabled = true
 ssao_enabled = true
 sdfgi_bounce_feedback = 0.28
 
@@ -71,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59646, 1.89702, -8.81533)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7228, 1.89702, -9.6454)
 
 [node name="Coin" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96004, 1.518, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98677, 1.518, -2.106)
 script = ExtResource("5_8mads")
 
 [node name="Model" type="MeshInstance3D" parent="Coin"]
@@ -83,7 +82,77 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
 shape = SubResource("SphereShape3D_8cfro")
 
+[node name="Coin2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.90901, 1.518, -5.19535)
+script = ExtResource("5_8mads")
+
+[node name="Model" type="MeshInstance3D" parent="Coin2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("5_ucrgm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
+shape = SubResource("SphereShape3D_8cfro")
+
+[node name="Coin3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.90901, 1.518, -1.20933)
+script = ExtResource("5_8mads")
+
+[node name="Model" type="MeshInstance3D" parent="Coin3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("5_ucrgm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
+shape = SubResource("SphereShape3D_8cfro")
+
+[node name="Coin4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.90901, 2.00079, -9.20832)
+script = ExtResource("5_8mads")
+
+[node name="Model" type="MeshInstance3D" parent="Coin4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("5_ucrgm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
+shape = SubResource("SphereShape3D_8cfro")
+
+[node name="Coin5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43803, 2.00079, -9.67156)
+script = ExtResource("5_8mads")
+
+[node name="Model" type="MeshInstance3D" parent="Coin5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("5_ucrgm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
+shape = SubResource("SphereShape3D_8cfro")
+
+[node name="Coin6" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32946, 2.00079, -9.40271)
+script = ExtResource("5_8mads")
+
+[node name="Model" type="MeshInstance3D" parent="Coin6"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("5_ucrgm")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
+shape = SubResource("SphereShape3D_8cfro")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_omm7g")
 
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin2" to="Coin2" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin3" to="Coin3" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin4" to="Coin4" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin5" to="Coin5" method="_on_body_entered"]
+[connection signal="body_entered" from="Coin6" to="Coin6" method="_on_body_entered"]
