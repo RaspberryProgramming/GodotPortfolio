@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://82fe0f8b71lf"]
+[gd_scene load_steps=6 format=3 uid="uid://82fe0f8b71lf"]
 
+[ext_resource type="Script" path="res://Character.gd" id="1_8ytys"]
 [ext_resource type="Texture2D" uid="uid://diabrktxybq72" path="res://Sprites/Dragon.png" id="1_kyv2a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7bd4"]
@@ -16,11 +17,12 @@ shadow_size = 3
 shadow_color = Color(0.0980392, 0.0980392, 0.0980392, 0.835294)
 
 [node name="Character" type="Node2D"]
+script = ExtResource("1_8ytys")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_kyv2a")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -87.0
 offset_top = 75.0
 offset_right = 87.0
@@ -30,7 +32,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_n8gtg")
 value = 50.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="Healthtext" type="Label" parent="HealthBar"]
 layout_mode = 0
 offset_right = 174.0
 offset_bottom = 38.0
