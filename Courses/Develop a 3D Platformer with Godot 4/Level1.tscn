@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn765bhrkxymr"]
+[gd_scene load_steps=9 format=3 uid="uid://bn765bhrkxymr"]
 
 [ext_resource type="PackedScene" uid="uid://cjj3wjwh7hx4d" path="res://Platforms/PlatformLarge.tscn" id="1_p1lf6"]
 [ext_resource type="PackedScene" uid="uid://c86satyg74wbu" path="res://Player.tscn" id="2_w2dma"]
@@ -9,6 +9,13 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8cfro"]
 radius = 0.305122
+
+[sub_resource type="Environment" id="Environment_omm7g"]
+background_mode = 1
+background_color = Color(0.486275, 0.784314, 0.847059, 1)
+ssr_enabled = true
+ssao_enabled = true
+sdfgi_bounce_feedback = 0.28
 
 [node name="Main" type="Node3D"]
 
@@ -75,5 +82,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Coin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300317, 0)
 shape = SubResource("SphereShape3D_8cfro")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_omm7g")
 
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
