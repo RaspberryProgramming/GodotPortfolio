@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjfo4xdq8hqs3"]
+[gd_scene load_steps=10 format=3 uid="uid://bjfo4xdq8hqs3"]
 
 [ext_resource type="Script" path="res://TurnManager.gd" id="1_a0gjw"]
 [ext_resource type="PackedScene" uid="uid://82fe0f8b71lf" path="res://Character.tscn" id="1_ainve"]
@@ -7,12 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://b5xw4pqpw82ds" path="res://Sprites/Reptile.png" id="4_8c7me"]
 [ext_resource type="Resource" uid="uid://c6n3v274y7da6" path="res://Combat Actions/Heal.tres" id="4_up4sr"]
 [ext_resource type="Resource" uid="uid://dy5h28xij0c14" path="res://Combat Actions/Stomp.tres" id="5_011ye"]
+[ext_resource type="Script" path="res://PlayerUI.gd" id="8_r4ajt"]
+[ext_resource type="Script" path="res://CombatActionButton.gd" id="8_w5jwy"]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_a0gjw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ainve")]
-position = Vector2(-207, 0)
+position = Vector2(-207, -72)
 is_player = true
 combat_actions = [ExtResource("3_chmcd"), ExtResource("4_up4sr"), ExtResource("5_011ye")]
 opponent = NodePath("../Enemy")
@@ -26,3 +28,35 @@ flip_visual = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+
+[node name="PlayerCombatActionsUI" type="VBoxContainer" parent="."]
+offset_left = -294.0
+offset_top = 45.0
+offset_right = -119.0
+offset_bottom = 181.0
+script = ExtResource("8_r4ajt")
+
+[node name="CombatAction" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("8_w5jwy")
+
+[node name="CombatAction2" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("8_w5jwy")
+
+[node name="CombatAction3" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("8_w5jwy")
+
+[node name="CombatAction4" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("8_w5jwy")
+
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction" to="PlayerCombatActionsUI/CombatAction" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction2" to="PlayerCombatActionsUI/CombatAction2" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction3" to="PlayerCombatActionsUI/CombatAction3" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/CombatAction4" to="PlayerCombatActionsUI/CombatAction4" method="_on_pressed"]
