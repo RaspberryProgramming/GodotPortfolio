@@ -5,7 +5,7 @@ class_name Character
 @export var cur_hp : int = 25
 @export var max_hp : int = 25
 
-@export var combat_action : Array
+@export var combat_actions : Array[CombatAction]
 @export var opponent : Node
 
 @onready var health_bar : ProgressBar = get_node("HealthBar")

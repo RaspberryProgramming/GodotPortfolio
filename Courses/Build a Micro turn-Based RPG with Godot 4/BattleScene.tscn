@@ -11,6 +11,7 @@ script = ExtResource("1_a0gjw")
 [node name="Player" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ainve")]
 position = Vector2(-207, 0)
 is_player = true
+combat_actions = [null, null]
 opponent = NodePath("../Enemy")
 visual = ExtResource("3_twgcq")
 
