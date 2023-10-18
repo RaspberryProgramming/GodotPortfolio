@@ -45,9 +45,7 @@ func _update_health_bar():
   health_text.text = str(cur_hp, "/", max_hp)
 
 func _on_character_begin_turn(character):
-  print("On Character")
   if character == self and is_player == false:
-    print("Deciding Action")
     _decide_combat_action()
   
 func cast_combat_action(action):
