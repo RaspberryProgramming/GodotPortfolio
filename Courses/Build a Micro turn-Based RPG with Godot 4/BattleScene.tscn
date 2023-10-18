@@ -40,21 +40,25 @@ script = ExtResource("8_r4ajt")
 buttons = Array[NodePath]([NodePath("CombatAction"), NodePath("CombatAction2"), NodePath("CombatAction3"), NodePath("CombatAction4")])
 
 [node name="CombatAction" type="Button" parent="PlayerCombatActionsUI"]
+visible = false
 layout_mode = 2
 text = "Slash (5 DMG)"
 script = ExtResource("8_w5jwy")
 
 [node name="CombatAction2" type="Button" parent="PlayerCombatActionsUI"]
+visible = false
 layout_mode = 2
 text = "Slash (5 DMG)"
 script = ExtResource("8_w5jwy")
 
 [node name="CombatAction3" type="Button" parent="PlayerCombatActionsUI"]
+visible = false
 layout_mode = 2
 text = "Slash (5 DMG)"
 script = ExtResource("8_w5jwy")
 
 [node name="CombatAction4" type="Button" parent="PlayerCombatActionsUI"]
+visible = false
 layout_mode = 2
 text = "Slash (5 DMG)"
 script = ExtResource("8_w5jwy")

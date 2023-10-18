@@ -9,7 +9,7 @@ class_name Character
 @export var opponent : Node
 
 @onready var health_bar : ProgressBar = get_node("HealthBar")
-@onready var health_text : Label = get_node("HeathBar/HealthText")
+@onready var health_text : Label = get_node("HealthBar/Healthtext")
 
 @export var visual : Texture2D
 @export var flip_visual : bool
@@ -51,4 +51,10 @@ func _on_character_end_turn(character):
   pass
   
 func cast_combat_action(action):
-  pass
+  if action.damage > 0:
+    opponent.take_damage(action.damage)
+  
+  if action.heal > 0:
+    heal(action.heal)
+    
+  get_node("/root/BattleScene").end_current_turn()
