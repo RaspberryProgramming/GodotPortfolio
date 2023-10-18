@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjfo4xdq8hqs3"]
+[gd_scene load_steps=8 format=3 uid="uid://bjfo4xdq8hqs3"]
 
 [ext_resource type="Script" path="res://TurnManager.gd" id="1_a0gjw"]
 [ext_resource type="PackedScene" uid="uid://82fe0f8b71lf" path="res://Character.tscn" id="1_ainve"]
+[ext_resource type="Resource" uid="uid://40cs1c5aq502" path="res://Combat Actions/Slash.tres" id="3_chmcd"]
 [ext_resource type="Texture2D" uid="uid://diabrktxybq72" path="res://Sprites/Dragon.png" id="3_twgcq"]
 [ext_resource type="Texture2D" uid="uid://b5xw4pqpw82ds" path="res://Sprites/Reptile.png" id="4_8c7me"]
+[ext_resource type="Resource" uid="uid://c6n3v274y7da6" path="res://Combat Actions/Heal.tres" id="4_up4sr"]
+[ext_resource type="Resource" uid="uid://dy5h28xij0c14" path="res://Combat Actions/Stomp.tres" id="5_011ye"]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_a0gjw")
@@ -11,7 +14,7 @@ script = ExtResource("1_a0gjw")
 [node name="Player" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ainve")]
 position = Vector2(-207, 0)
 is_player = true
-combat_actions = [null, null]
+combat_actions = [ExtResource("3_chmcd"), ExtResource("4_up4sr"), ExtResource("5_011ye")]
 opponent = NodePath("../Enemy")
 visual = ExtResource("3_twgcq")
 
