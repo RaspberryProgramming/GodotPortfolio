@@ -16,14 +16,15 @@ player_char = NodePath("Player")
 enemy_char = NodePath("Enemy")
 
 [node name="Player" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ainve")]
-position = Vector2(-207, -72)
+position = Vector2(-207, -70)
 is_player = true
 combat_actions = Array[Resource("res://CombatAction.gd")]([ExtResource("3_chmcd"), ExtResource("4_up4sr"), ExtResource("5_011ye")])
 opponent = NodePath("../Enemy")
 visual = ExtResource("3_twgcq")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ainve")]
-position = Vector2(212, 0)
+position = Vector2(212, -70)
+combat_actions = Array[Resource("res://CombatAction.gd")]([ExtResource("4_up4sr"), ExtResource("3_chmcd")])
 opponent = NodePath("../Player")
 visual = ExtResource("4_8c7me")
 flip_visual = true

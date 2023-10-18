@@ -21,7 +21,7 @@ func _ready():
   $Sprite.flip_h = flip_visual
   
   get_node("/root/BattleScene").character_begin_turn.connect(_on_character_begin_turn)
-  get_node("/root/BattleScene").character_end_turn.connect(_on_character_end_turn)
+
   health_bar.max_value = max_hp
 
 func take_damage(damage):
@@ -45,10 +45,10 @@ func _update_health_bar():
   health_text.text = str(cur_hp, "/", max_hp)
 
 func _on_character_begin_turn(character):
-  pass
-  
-func _on_character_end_turn(character):
-  pass
+  print("On Character")
+  if character == self and is_player == false:
+    print("Deciding Action")
+    _decide_combat_action()
   
 func cast_combat_action(action):
   if action.damage > 0:
@@ -58,3 +58,19 @@ func cast_combat_action(action):
     heal(action.heal)
     
   get_node("/root/BattleScene").end_current_turn()
+
+func _decide_combat_action():
+  var health_percent : float = float(cur_hp) / float(max_hp)
+  
+  for i in combat_actions:
+    var action = i as CombatAction
+    
+    if action.heal > 0:
+      if randf() > health_percent:
+        cast_combat_action(action)
+        return
+      else:
+        continue
+    else:
+      cast_combat_action(action)
+      return
