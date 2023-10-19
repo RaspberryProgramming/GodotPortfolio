@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bf1isk3x52lnp"]
 
+[ext_resource type="Script" path="res://GameManager.gd" id="1_3qq3k"]
 [ext_resource type="Texture2D" uid="uid://7vqgdoyxvl05" path="res://Sprites/tilemap.png" id="1_a2wq7"]
-[ext_resource type="PackedScene" uid="uid://dobnwsmk1sqar" path="res://Unit.tscn" id="2_3oakd"]
 [ext_resource type="PackedScene" uid="uid://xm6tpyxp5nbl" path="res://PlayerUnit.tscn" id="3_18hrx"]
 [ext_resource type="PackedScene" uid="uid://clupkk48c35kw" path="res://EnemyUnit.tscn" id="4_54uob"]
 
@@ -155,6 +155,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(128, -96, 0, -96, 0, -24, 23, -24, 23, 39, 0, 39, 0, 80, 128, 80)])
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_3qq3k")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yiuj8")
@@ -171,11 +172,8 @@ navigation_polygon = SubResource("NavigationPolygon_hpa26")
 position = Vector2(0, -11)
 zoom = Vector2(2.8, 2.8)
 
-[node name="Unit" parent="." instance=ExtResource("2_3oakd")]
-position = Vector2(-76, 15)
-
 [node name="PlayerUnit" parent="." instance=ExtResource("3_18hrx")]
-position = Vector2(-92, 34)
+position = Vector2(-88, 0)
 
 [node name="EnemyUnit" parent="." instance=ExtResource("4_54uob")]
-position = Vector2(-98, -8)
+position = Vector2(79, 0)
