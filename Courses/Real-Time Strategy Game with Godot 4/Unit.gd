@@ -66,4 +66,8 @@ func take_damage(damage_to_take):
   
   if health <= 0:
     queue_free()
-    
+  
+  # Modulate color of unit when receiving damage
+  sprite.modulate = Color.RED
+  await get_tree().create_timer(0.1).timeout
+  sprite.modulate = Color.WHITE
