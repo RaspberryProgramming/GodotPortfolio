@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf1isk3x52lnp"]
+[gd_scene load_steps=6 format=3 uid="uid://bf1isk3x52lnp"]
 
 [ext_resource type="Texture2D" uid="uid://7vqgdoyxvl05" path="res://Sprites/tilemap.png" id="1_a2wq7"]
-[ext_resource type="Texture2D" uid="uid://cwo00facvx33s" path="res://Sprites/tile_0084.png" id="2_tlscx"]
-[ext_resource type="Texture2D" uid="uid://c8ei3sddb5jkr" path="res://Sprites/tile_0087.png" id="3_a4v74"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kfj2"]
 texture = ExtResource("1_a2wq7")
@@ -165,14 +163,6 @@ navigation_polygon = SubResource("NavigationPolygon_ki6kt")
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_hpa26")
-
-[node name="Tile0084" type="Sprite2D" parent="."]
-position = Vector2(-81, 2)
-texture = ExtResource("2_tlscx")
-
-[node name="Tile0087" type="Sprite2D" parent="."]
-position = Vector2(78, -3)
-texture = ExtResource("3_a4v74")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -11)
