@@ -18,6 +18,32 @@ var sprite : Sprite2D
 func _ready():
   agent = $NavigationAgent2D
   sprite = $Sprite2D
+  
+  move_to_location(Vector2(60, 0))
+
+func _physics_process(delta):
+  if agent.is_navigation_finished():
+    return
+  
+  var direction = global_position.direction_to(agent.get_next_path_position())
+  
+  velocity = direction * move_speed
+  
+  move_and_slide()
+
+func _process(delta):
+  _target_check()  
+  
+func _target_check():
+  if target != null:
+    var dist = global_position.distance_to(target.global_position)
+    
+    if dist <= attack_range:
+      agent.target_position = global_position
+      _try_attack_target()
+    else:
+      agent.target_position = target.global_position
+      
 
 func move_to_location(location):
   target = null

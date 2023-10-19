@@ -143,14 +143,14 @@ separation = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_6kfj2")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ki6kt"]
-vertices = PackedVector2Array(0, 32, 0, 80, -128, 79, -16, 32, -128, -97, -16, -16, 0, -96, 0, -16)
+vertices = PackedVector2Array(0, 39, 0, 80, -128, 79, -22, 39, -128, -97, -22, -24, 0, -96, 0, -24)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -97, -128, 79, 0, 80, 0, 32, -16, 32, -16, -16, 0, -16, 0, -96)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -97, -128, 79, 0, 80, 0, 39, -22, 39, -22, -24, 0, -24, 0, -96)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hpa26"]
-vertices = PackedVector2Array(128, -96, 128, 80, 0, 80, 16, 32, 0, 32, 16, -16, 0, -96, 0, -16)
+vertices = PackedVector2Array(128, -96, 128, 80, 0, 80, 23, 39, 0, 39, 23, -24, 0, -96, 0, -24)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 3), PackedInt32Array(0, 3, 5), PackedInt32Array(6, 0, 5, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(128, -96, 0, -96, 0, -16, 16, -16, 16, 32, 0, 32, 0, 80, 128, 80)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(128, -96, 0, -96, 0, -24, 23, -24, 23, 39, 0, 39, 0, 80, 128, 80)])
 
 [node name="Main" type="Node2D"]
 
@@ -170,4 +170,4 @@ position = Vector2(0, -11)
 zoom = Vector2(2.8, 2.8)
 
 [node name="Unit" parent="." instance=ExtResource("2_3oakd")]
-position = Vector2(-65, -5)
+position = Vector2(-76, 15)
