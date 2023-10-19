@@ -12,3 +12,5 @@ Create a 2D Platformer with Godot 4 [Link](https://academy.zenva.com/course/crea
 Develop a 3D Platformer with Godot 4 [Link](https://academy.zenva.com/course/develop-a-3d-platformer-with-godot-4/)
 
 Build a Micro Turn-Based RPG with Godot 4 [Link](https://academy.zenva.com/course/build-a-turn-based-rpg-battle-system-with-godot-4/)
+
+Real-Time Strategy Game with Godot 4 [Link](https://academy.zenva.com/course/create-an-rts-game-with-godot-4/)
