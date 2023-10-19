@@ -37,7 +37,19 @@ func _select_unit(unit):
   selected_unit.toggle_selection_visual(true)
   
 func _unselect_unit():
-  pass
+  if selected_unit != null:
+    selected_unit.toggle_selection_visual(false)
+  
+  selected_unit = null
   
 func _try_command_unit():
+  if selected_unit == null:
+    return
   
+  var target = _get_selected_unit()
+  
+  if target != null and !target.is_player:
+    selected_unit.set_target(target)
+  else:
+    selected_unit.move_to_location(get_global_mouse_position())
+    

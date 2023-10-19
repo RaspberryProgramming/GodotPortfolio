@@ -19,7 +19,7 @@ var sprite : Sprite2D
 
 func _ready():
   agent = $NavigationAgent2D
-  sprite = $Sprite2D
+  sprite = $Sprite
   
   move_to_location(Vector2(60, 0))
 
