@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name GameManager
+
 var selected_unit : CharacterBody2D
 var players : Array[CharacterBody2D]
 var enemies : Array[CharacterBody2D]

@@ -8,6 +8,12 @@ size = Vector2(16, 15)
 
 [node name="Unit" type="CharacterBody2D"]
 script = ExtResource("1_1tnfn")
+health = null
+damage = null
+move_speed = null
+attack_range = null
+attack_rate = null
+is_player = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_encjo")
