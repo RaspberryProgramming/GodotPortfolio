@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf1isk3x52lnp"]
+[gd_scene load_steps=9 format=3 uid="uid://bf1isk3x52lnp"]
 
 [ext_resource type="Texture2D" uid="uid://7vqgdoyxvl05" path="res://Sprites/tilemap.png" id="1_a2wq7"]
 [ext_resource type="PackedScene" uid="uid://dobnwsmk1sqar" path="res://Unit.tscn" id="2_3oakd"]
 [ext_resource type="PackedScene" uid="uid://xm6tpyxp5nbl" path="res://PlayerUnit.tscn" id="3_18hrx"]
+[ext_resource type="PackedScene" uid="uid://clupkk48c35kw" path="res://EnemyUnit.tscn" id="4_54uob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kfj2"]
 texture = ExtResource("1_a2wq7")
@@ -175,3 +176,6 @@ position = Vector2(-76, 15)
 
 [node name="PlayerUnit" parent="." instance=ExtResource("3_18hrx")]
 position = Vector2(-92, 34)
+
+[node name="EnemyUnit" parent="." instance=ExtResource("4_54uob")]
+position = Vector2(-98, -8)
