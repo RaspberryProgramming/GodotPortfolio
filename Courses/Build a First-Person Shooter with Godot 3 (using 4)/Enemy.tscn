@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkh5yg00seqki"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_naen5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4ge3"]
+albedo_color = Color(0.921569, 0.164706, 0.156863, 1)
+metallic = 0.48
+roughness = 0.45
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2vvvk"]
+material = SubResource("StandardMaterial3D_t4ge3")
+height = 2.25
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mj55i"]
+height = 2.25
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_naen5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+mesh = SubResource("CapsuleMesh_2vvvk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+shape = SubResource("CapsuleShape3D_mj55i")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
