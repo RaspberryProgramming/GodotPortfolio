@@ -23,6 +23,10 @@ var mouseDelta : Vector2 = Vector2()
 @onready var camera : Camera3D = $Camera3D
 @onready var muzzle : Node3D = $Camera3D/Muzzle
 
+func _ready():
+  # hide and lock the mouse cursor
+  Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func _physics_process(delta):
   # reset the x and z velocity
   
@@ -63,3 +67,19 @@ func _physics_process(delta):
     
   move_and_slide()
   
+func _process(delta):
+  # rotate the camera along the x axis
+  camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
+  
+  # clamp camera x rotation axis
+  camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
+  
+  # rotate the player along their y axis
+  rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
+  
+  # reset the mouse delta vector
+  mouseDelta = Vector2()
+  
+func _input(event):
+  if event is InputEventMouseMotion:
+    mouseDelta = event.relative
