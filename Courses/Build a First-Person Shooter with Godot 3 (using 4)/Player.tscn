@@ -3,11 +3,11 @@
 [ext_resource type="ArrayMesh" uid="uid://dqn411w4wutr0" path="res://Models/Weapon/shotgun.obj" id="1_3xhhq"]
 [ext_resource type="Script" path="res://Player.gd" id="1_qg5qc"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kjk10"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2lykt"]
+size = Vector3(1, 2, 1)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0530033, 0)
-motion_mode = 1
 script = ExtResource("1_qg5qc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -23,5 +23,5 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195908, -0.43263, -1.0326)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_kjk10")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00616, 0)
+shape = SubResource("BoxShape3D_2lykt")
