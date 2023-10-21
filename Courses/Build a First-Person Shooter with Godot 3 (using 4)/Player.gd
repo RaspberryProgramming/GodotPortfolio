@@ -121,3 +121,16 @@ func add_score(amount):
   score += amount
   
   ui.update_score_text(score)
+
+func add_health(amount):
+  curHp += amount
+  
+  if curHp > maxHp:
+    curHp = maxHp
+  
+  ui.update_health_bar(curHp, maxHp)
+
+func add_ammo(amount):
+  ammo += amount
+  
+  ui.update_ammo_text(ammo)

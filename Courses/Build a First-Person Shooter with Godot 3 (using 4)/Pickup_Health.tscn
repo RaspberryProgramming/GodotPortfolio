@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk7auftapkkrv"]
+
+[ext_resource type="PackedScene" uid="uid://ckdopl7cyvjae" path="res://Pickup.tscn" id="1_4t7ls"]
+[ext_resource type="PackedScene" uid="uid://dqq06ll6b5u5t" path="res://Models/Pickups/HealthPackModel.dae" id="2_jgei3"]
+
+[node name="PickupHealth" instance=ExtResource("1_4t7ls")]
+
+[node name="HealthPackModel" parent="." index="1" instance=ExtResource("2_jgei3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
