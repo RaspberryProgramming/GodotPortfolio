@@ -20,7 +20,7 @@ mesh = ExtResource("1_3xhhq")
 skeleton = NodePath("../..")
 
 [node name="Muzzle" type="Node3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195908, -0.43263, -1.0326)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.195908, -0.43263, -1.0326)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00616, 0)

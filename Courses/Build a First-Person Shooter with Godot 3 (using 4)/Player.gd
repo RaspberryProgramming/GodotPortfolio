@@ -22,6 +22,7 @@ var mouseDelta : Vector2 = Vector2()
 
 @onready var camera : Camera3D = $Camera3D
 @onready var muzzle : Node3D = $Camera3D/Muzzle
+@onready var bulletScene = load('res://Bullet.tscn')
 
 func _ready():
   # hide and lock the mouse cursor
@@ -80,6 +81,19 @@ func _process(delta):
   # reset the mouse delta vector
   mouseDelta = Vector2()
   
+  # check to see if we have shot
+  if Input.is_action_just_pressed("shoot") and ammo > 0:
+    shoot()
+  
 func _input(event):
   if event is InputEventMouseMotion:
     mouseDelta = event.relative
+
+func shoot():
+  var bullet = bulletScene.instantiate()
+  get_node("/root/MainScene").add_child(bullet)
+  
+  bullet.global_transform = muzzle.global_transform
+  
+  ammo -= 1
+  

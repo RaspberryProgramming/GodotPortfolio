@@ -5,7 +5,6 @@ var damage : int = 1
 
 func _process(delta):
   position += global_transform.basis.z * speed * delta
-  print(position, global_position)
 
 func destroy():
   queue_free()
