@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj0rtfoqb63q2"]
+[gd_scene load_steps=4 format=3 uid="uid://dj0rtfoqb63q2"]
 
 [ext_resource type="ArrayMesh" uid="uid://dqn411w4wutr0" path="res://Models/Weapon/shotgun.obj" id="1_3xhhq"]
+[ext_resource type="Script" path="res://Player.gd" id="1_qg5qc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kjk10"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0530033, 0)
 motion_mode = 1
+script = ExtResource("1_qg5qc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01183, 0)
