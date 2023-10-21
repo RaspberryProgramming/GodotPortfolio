@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://5cw2loro0rjc"]
+
+[ext_resource type="Texture2D" uid="uid://sw1ar8b378di" path="res://UI/UI_Square.png" id="1_5vs1i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0fk5"]
+font_size = 30
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -48.0
+offset_right = 220.0
+offset_bottom = -16.0
+grow_vertical = 0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_5vs1i")
+texture_progress = ExtResource("1_5vs1i")
+tint_under = Color(0.196078, 0.196078, 0.196078, 1)
+tint_progress = Color(0.909804, 0.0705882, 0.0666667, 1)
+
+[node name="AmmoText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 550.0
+offset_right = 166.0
+offset_bottom = 595.0
+text = "Ammo: 50"
+label_settings = SubResource("LabelSettings_y0fk5")
+
+[node name="ScoreText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 510.0
+offset_right = 167.0
+offset_bottom = 555.0
+text = "Score: 500
+"
+label_settings = SubResource("LabelSettings_y0fk5")
