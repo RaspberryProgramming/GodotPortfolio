@@ -35,6 +35,10 @@ data = PackedVector3Array(0, 0, 0, 0.2013, 0, -0.2013, 0, 0, -0.2013, 0.2013, 0,
 [node name="MainScene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("7_dpcfp")]
+
 [node name="Models" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Models"]
@@ -576,7 +580,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10867, -0.722998, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_xt3xm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98275, -0.756197, -0.0402956)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" parent="CanvasLayer" instance=ExtResource("7_dpcfp")]

@@ -42,7 +42,7 @@ func take_damage(damage):
     die()
   
 func die():
-  # TODO: add to player score
+  player.add_score(scoreToGive)
   
   queue_free()
   
