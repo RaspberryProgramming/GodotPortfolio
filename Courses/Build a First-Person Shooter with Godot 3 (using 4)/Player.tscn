@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj0rtfoqb63q2"]
+
+[ext_resource type="ArrayMesh" uid="uid://dqn411w4wutr0" path="res://Models/Weapon/shotgun.obj" id="1_3xhhq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kjk10"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0530033, 0)
+motion_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01183, 0)
+current = true
+
+[node name="GunModel" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 0.2, -0.5, -0.6)
+mesh = ExtResource("1_3xhhq")
+skeleton = NodePath("../..")
+
+[node name="Muzzle" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195908, -0.43263, -1.0326)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_kjk10")
