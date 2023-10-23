@@ -16,3 +16,5 @@ Build a Micro Turn-Based RPG with Godot 4 [Link](https://academy.zenva.com/cours
 Real-Time Strategy Game with Godot 4 [Link](https://academy.zenva.com/course/create-an-rts-game-with-godot-4/)
 
 Build a First-Person Shooter with Godot 3 [Link](https://academy.zenva.com/course/build-a-first-person-shooter-with-godot/)
+
+Construct a Strategy Game with Godot 3 [Link] (https://academy.zenva.com/course/construct-a-strategy-game-with-godot/)
