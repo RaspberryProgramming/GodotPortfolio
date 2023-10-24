@@ -61,3 +61,55 @@ icon = ExtResource("4_o3wda")
 [node name="SolarPanelButton" type="Button" parent="BuildingButtons"]
 layout_mode = 2
 icon = ExtResource("5_em06v")
+
+[node name="HeaderFoodMetal" type="Label" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 32.0
+offset_right = 450.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_1ru1r")
+theme_override_font_sizes/font_size = 30
+text = "Food:
+Metal:
+"
+horizontal_alignment = 2
+
+[node name="FoodMetalText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 32.0
+offset_right = 616.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 0.576471, 0.027451, 1)
+theme_override_fonts/font = ExtResource("2_1ru1r")
+theme_override_font_sizes/font_size = 30
+text = "25 (+80)
+25 (+80)
+"
+
+[node name="HeaderOxygenEnergy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 32.0
+offset_right = 700.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_1ru1r")
+theme_override_font_sizes/font_size = 30
+text = "Oxygen:
+Energy:
+"
+horizontal_alignment = 2
+
+[node name="OxygenEnergyText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 32.0
+offset_right = 870.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 0.576471, 0.027451, 1)
+theme_override_fonts/font = ExtResource("2_1ru1r")
+theme_override_font_sizes/font_size = 30
+text = "25 (+80)
+25 (+80)
+"
