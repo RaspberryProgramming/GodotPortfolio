@@ -1,3 +1,5 @@
+extends Node
+
 var base : Building = Building.new(0, preload("res://Sprites/Base.png"), 0, 0, 0, 0)
 var mine : Building = Building.new(1, preload("res://Sprites/Mine.png"), 2, 1, 4, 1)
 var greenhouse : Building = Building.new(2, preload("res://Sprites/Greenhouse.png"), 1, 1, 0, 0)

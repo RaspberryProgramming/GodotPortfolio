@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okehl"]
 size = Vector2(64, 64)
 
-[node name="Tile" type="Area2D"]
+[node name="Tile" type="Area2D" groups=["Tiles"]]
 script = ExtResource("1_ftngf")
 
 [node name="Ground" type="Sprite2D" parent="."]

@@ -8,10 +8,6 @@ var canPlaceBuilding : bool = false
 # components
 @onready var highlight : Sprite2D = get_node("Hightlight")
 @onready var buildingIcon : Sprite2D = get_node("BuildingIcon")
-
-func _ready():
-  
-  add_to_group("Tiles")
   
 func toggle_highlight(toggle):
   
