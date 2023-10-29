@@ -23,4 +23,4 @@ func place_building(buildingTexture):
   buildingIcon.texture = buildingTexture
 
 func _on_input_event(viewport, event, shape_idx):
-  pass # Replace with function body.
+  pass
