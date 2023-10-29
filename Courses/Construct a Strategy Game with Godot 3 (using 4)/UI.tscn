@@ -117,3 +117,6 @@ text = "25 (+80)
 "
 
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="BuildingButtons/MineButton" to="." method="_on_mine_button_pressed"]
+[connection signal="pressed" from="BuildingButtons/GreenhouseButton" to="." method="_on_greenhouse_button_pressed"]
+[connection signal="pressed" from="BuildingButtons/SolarPanelButton" to="." method="_on_solar_panel_button_pressed"]

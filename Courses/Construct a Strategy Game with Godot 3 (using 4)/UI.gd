@@ -36,3 +36,15 @@ func update_resource_text():
 
 func _on_end_turn_button_pressed():
   gameManager.end_turn()
+
+func _on_mine_button_pressed():
+  buildingButtons.visible = false
+  gameManager.on_select_building(1)
+
+func _on_greenhouse_button_pressed():
+  buildingButtons.visible = false
+  gameManager.on_select_building(2)
+
+func _on_solar_panel_button_pressed():
+  buildingButtons.visible = false
+  gameManager.on_select_building(3)

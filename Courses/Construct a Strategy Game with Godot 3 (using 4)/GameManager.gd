@@ -16,8 +16,12 @@ var currentlyPlacingBuilding : bool = false
 var buildingToPlace : int
 
 # components
-@onready var ui : Node = get_node("UI")
+@onready var ui : Node = get_node("CanvasLayer/UI")
 @onready var map : Node = get_node("Tiles")
+
+func _ready():
+  ui.update_resource_text()
+  ui.on_end_turn()
 
 func on_select_building(buildingType):
   
@@ -52,18 +56,22 @@ func place_building(tileToPlaceOn):
     add_to_resource_per_turn(BuildingData.mine.upkeepResource, BuildingData.mine.upkeepResourceAmount)
   
   # are we placing down a Greenhouse?
-  if buildingToPlace == 1:
+  if buildingToPlace == 2:
     texture = BuildingData.greenhouse.iconTexture
     
     add_to_resource_per_turn(BuildingData.greenhouse.prodResource, BuildingData.greenhouse.prodResourceAmount)
     add_to_resource_per_turn(BuildingData.greenhouse.upkeepResource, BuildingData.greenhouse.upkeepResourceAmount)
     
   # are we placing down a SolarPanel?
-  if buildingToPlace == 1:
+  if buildingToPlace == 3:
     texture = BuildingData.solarpanel.iconTexture
     
     add_to_resource_per_turn(BuildingData.solarpanel.prodResource, BuildingData.solarpanel.prodResourceAmount)
     add_to_resource_per_turn(BuildingData.solarpanel.upkeepResource, BuildingData.solarpanel.upkeepResourceAmount)
+  
+  map.place_building(tileToPlaceOn, texture)
+  
+  ui.update_resource_text()
     
 func end_turn():
   curFood += foodPerTurn
@@ -72,3 +80,6 @@ func end_turn():
   curEnergy += energyPerTurn
   
   curTurn += 1
+  
+  ui.update_resource_text()
+  ui.on_end_turn()

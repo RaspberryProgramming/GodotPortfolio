@@ -19,4 +19,10 @@ func place_building(buildingTexture):
   buildingIcon.texture = buildingTexture
 
 func _on_input_event(viewport, event, shape_idx):
-  pass
+  
+  if event is InputEventMouseButton and event.pressed:
+    var gameManager = get_node("/root/MainScene")
+    
+    if gameManager.currentlyPlacingBuilding and canPlaceBuilding:
+      gameManager.place_building(self)
+      
