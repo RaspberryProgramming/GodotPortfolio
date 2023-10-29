@@ -65,4 +65,10 @@ func place_building(tileToPlaceOn):
     add_to_resource_per_turn(BuildingData.solarpanel.prodResource, BuildingData.solarpanel.prodResourceAmount)
     add_to_resource_per_turn(BuildingData.solarpanel.upkeepResource, BuildingData.solarpanel.upkeepResourceAmount)
     
-    
+func end_turn():
+  curFood += foodPerTurn
+  curMetal += metalPerTurn
+  curOxygen += oxygenPerTurn
+  curEnergy += energyPerTurn
+  
+  curTurn += 1
