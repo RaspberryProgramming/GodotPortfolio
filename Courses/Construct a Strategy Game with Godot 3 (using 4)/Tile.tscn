@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv3o48m4ew0cb"]
+[gd_scene load_steps=5 format=3 uid="uid://cv3o48m4ew0cb"]
 
 [ext_resource type="Texture2D" uid="uid://boooqnqicibir" path="res://Sprites/Ground.png" id="1_etjiu"]
+[ext_resource type="Script" path="res://Tile.gd" id="1_ftngf"]
 [ext_resource type="Texture2D" uid="uid://xtoa3jb4njd3" path="res://Sprites/TileHighlight.png" id="2_tcnee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okehl"]
 size = Vector2(64, 64)
 
 [node name="Tile" type="Area2D"]
+script = ExtResource("1_ftngf")
 
 [node name="Ground" type="Sprite2D" parent="."]
 texture = ExtResource("1_etjiu")
@@ -20,3 +22,5 @@ texture = ExtResource("2_tcnee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_okehl")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
