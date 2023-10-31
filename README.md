@@ -18,3 +18,5 @@ Real-Time Strategy Game with Godot 4 [Link](https://academy.zenva.com/course/cre
 Build a First-Person Shooter with Godot 3 [Link](https://academy.zenva.com/course/build-a-first-person-shooter-with-godot/)
 
 Construct a Strategy Game with Godot 3 [Link] (https://academy.zenva.com/course/construct-a-strategy-game-with-godot/)
+
+Create a 2D RPG with Godot 3 [Link](https://academy.zenva.com/course/create-an-rpg-with-godot/)
