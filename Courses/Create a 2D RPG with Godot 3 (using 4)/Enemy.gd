@@ -14,6 +14,10 @@ var chaseDist : int = 400;
 @onready var timer = get_node("Timer");
 @onready var target = get_node("/root/MainScene/Player");
 
+func _ready():
+  timer.wait_time = attackRate;
+  timer.start();
+
 func _physics_process(delta):
   
   # Get our distance from player
@@ -24,5 +28,19 @@ func _physics_process(delta):
   if dist > attackDist and dist < chaseDist:
     velocity = (target.position - position).normalized() * moveSpeed;
     
-    
   move_and_slide();
+
+func _on_timer_timeout():
+  if position.distance_to(target.position) <= attackDist:
+    target.take_damage(damage);
+
+func take_damage(dmgToTake):
+  curHp -= dmgToTake;
+  
+  if curHp <= 0:
+    die();
+    
+func die():
+  
+  target.give_xp(xpToGive); # Give player xp
+  queue_free(); # Destroy enemy node

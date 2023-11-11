@@ -71,5 +71,30 @@ func play_animation(animation_name):
   # Play animation if not already playing
   if sprite.animation != animation_name:
     sprite.play(animation_name);
+
+func give_xp(amount):
   
+  curXp += amount
   
+  if curXp >= xpToNextLevel:
+    level_up();
+    
+func level_up():
+  
+  var overflowXp = curXp - xpToNextLevel;
+  
+  xpToNextLevel *= xpToNextLevelIncreaseRate;
+  
+  curXp = overflowXp;
+  
+  curLevel += 1;
+  
+
+func take_damage(dmgToTake):
+  curHp -= dmgToTake;
+  
+  if curHp <= 0:
+    die();
+    
+func die():
+  get_tree().reload_current_scene();
