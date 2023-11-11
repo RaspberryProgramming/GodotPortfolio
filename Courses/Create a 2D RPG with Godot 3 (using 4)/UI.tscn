@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://0fkclpnh7slr"]
+[gd_scene load_steps=7 format=3 uid="uid://0fkclpnh7slr"]
 
 [ext_resource type="FontFile" uid="uid://c5k2eb0bp3irv" path="res://Font/Roboto-Bold.ttf" id="1_4bfhl"]
+[ext_resource type="Script" path="res://UI.gd" id="1_xeo5g"]
 [ext_resource type="Texture2D" uid="uid://chsrx18o2y7sj" path="res://UI/UI_Square.png" id="2_kl6dc"]
 [ext_resource type="FontFile" uid="uid://d07ffej4jrad2" path="res://Font/Roboto-Regular.ttf" id="3_lqnh2"]
 
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xeo5g")
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,7 +44,7 @@ offset_top = 5.0
 offset_right = 52.0
 offset_bottom = 54.0
 
-[node name="Label" type="Label" parent="BG/LevelBG"]
+[node name="LevelText" type="Label" parent="BG/LevelBG"]
 layout_mode = 0
 offset_right = 47.0
 offset_bottom = 49.0

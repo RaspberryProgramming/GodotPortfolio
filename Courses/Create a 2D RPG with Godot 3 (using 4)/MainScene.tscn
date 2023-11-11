@@ -8,6 +8,10 @@
 
 [node name="MainScene" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("5_6lyej")]
+
 [node name="TileMap_Ground" type="TileMap" parent="."]
 tile_set = ExtResource("1_d2nak")
 format = 2
@@ -19,6 +23,13 @@ format = 2
 layer_0/tile_data = PackedInt32Array(589825, 63, 0, 589824, 63, 0, 524288, 45, 0, 589826, 63, 0, 589827, 63, 0, 589828, 63, 0, 589829, 63, 0, 589830, 63, 0, 589831, 63, 0, 589832, 63, 0, 589833, 63, 0, 589834, 63, 0, 589835, 63, 0, 589836, 63, 0, 589837, 63, 0, 589838, 63, 0, 589839, 63, 0, 589842, 63, 0, 327689, 45, 0, 131086, 49, 0, 196622, 56, 0, 196615, 45, 0, 262154, 45, 0, 524287, 45, 0, 655359, 63, 0, 655358, 63, 0, 655362, 45, 0, 655374, 49, 0, 917507, 56, 0, 917518, 56, 0, 720910, 56, 0, 851976, 56, 0, 1179645, 56, 0, 1114109, 49, 0, 851971, 49, 0, 786440, 49, 0, 851982, 49, 0, 589843, 63, 0, 589844, 63, 0)
 
 [node name="Enemy" parent="." instance=ExtResource("2_i8rdp")]
+position = Vector2(462, 360)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_i8rdp")]
+position = Vector2(372, 461)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_i8rdp")]
+position = Vector2(914, 320)
 
 [node name="Player" parent="." instance=ExtResource("1_3k5fs")]
 position = Vector2(96, 87)
@@ -28,7 +39,3 @@ position = Vector2(-96, -87)
 
 [node name="Chest" parent="." instance=ExtResource("4_p3qn7")]
 position = Vector2(92, 428)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" parent="CanvasLayer" instance=ExtResource("5_6lyej")]
