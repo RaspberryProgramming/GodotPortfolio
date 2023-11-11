@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy5qf3gsbnhgt"]
+[gd_scene load_steps=6 format=3 uid="uid://dy5qf3gsbnhgt"]
 
 [ext_resource type="PackedScene" uid="uid://da37uadb4hsbl" path="res://Player.tscn" id="1_3k5fs"]
 [ext_resource type="TileSet" uid="uid://cikdsudyjemgs" path="res://TileSet.tres" id="1_d2nak"]
 [ext_resource type="PackedScene" uid="uid://belrc7deuchj" path="res://Enemy.tscn" id="2_i8rdp"]
 [ext_resource type="PackedScene" uid="uid://ddu6h8kgg23ld" path="res://Chest.tscn" id="4_p3qn7"]
+[ext_resource type="PackedScene" uid="uid://0fkclpnh7slr" path="res://UI.tscn" id="5_6lyej"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -27,3 +28,7 @@ position = Vector2(-96, -87)
 
 [node name="Chest" parent="." instance=ExtResource("4_p3qn7")]
 position = Vector2(92, 428)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("5_6lyej")]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://0fkclpnh7slr"]
+
+[ext_resource type="FontFile" uid="uid://c5k2eb0bp3irv" path="res://Font/Roboto-Bold.ttf" id="1_4bfhl"]
+[ext_resource type="Texture2D" uid="uid://chsrx18o2y7sj" path="res://UI/UI_Square.png" id="2_kl6dc"]
+[ext_resource type="FontFile" uid="uid://d07ffej4jrad2" path="res://Font/Roboto-Regular.ttf" id="3_lqnh2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mj48c"]
+font = ExtResource("1_4bfhl")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kwci"]
+font = ExtResource("3_lqnh2")
+font_size = 24
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -102.0
+offset_right = 78.0
+offset_bottom = -42.0
+scale = Vector2(1.5, 1.5)
+color = Color(0.184314, 0.184314, 0.184314, 1)
+
+[node name="LevelBG" type="ColorRect" parent="BG"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 54.0
+
+[node name="Label" type="Label" parent="BG/LevelBG"]
+layout_mode = 0
+offset_right = 47.0
+offset_bottom = 49.0
+text = "25"
+label_settings = SubResource("LabelSettings_mj48c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Healthbar" type="TextureProgressBar" parent="BG"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 5.0
+offset_right = 245.0
+offset_bottom = 40.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_kl6dc")
+texture_progress = ExtResource("2_kl6dc")
+tint_under = Color(0.305882, 0.305882, 0.305882, 1)
+tint_progress = Color(0.85098, 0.117647, 0, 1)
+
+[node name="XpBar" type="TextureProgressBar" parent="BG"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 45.0
+offset_right = 245.0
+offset_bottom = 55.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_kl6dc")
+texture_progress = ExtResource("2_kl6dc")
+tint_under = Color(0.305882, 0.305882, 0.305882, 1)
+tint_progress = Color(0.415686, 0.85098, 0.294118, 1)
+
+[node name="GoldText" type="Label" parent="BG"]
+layout_mode = 0
+offset_top = -43.0
+offset_right = 250.0
+offset_bottom = -2.0
+text = "Gold: 500"
+label_settings = SubResource("LabelSettings_4kwci")
+horizontal_alignment = 1
+vertical_alignment = 1
