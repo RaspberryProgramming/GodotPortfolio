@@ -17,7 +17,8 @@ var interactDist : int = 70;
 var vel : Vector2 = Vector2();
 var facingDir : Vector2 = Vector2();
 
-@onready var rayCast = get_node("RayCast2D");
+@onready var rayCast : RayCast2D = get_node("RayCast2D");
+@onready var sprite : AnimatedSprite2D = get_node("Sprite");
 
 func _physics_process(delta):
   velocity = Vector2();
@@ -41,3 +42,30 @@ func _physics_process(delta):
   
   # Move the player
   move_and_slide();
+  
+  manage_animations();
+
+func manage_animations():
+  if velocity.x > 0:
+    play_animation("MoveRight");
+  elif velocity.x < 0:
+    play_animation("MoveLeft");
+  elif velocity.y < 0:
+    play_animation("MoveUp");
+  elif velocity.y > 0:
+    play_animation("MoveDown");
+    
+  elif facingDir.x == 1:
+    play_animation("IdleRight");
+  elif facingDir.x == -1:
+    play_animation("IdleLeft");
+  elif facingDir.y == -1:
+    play_animation("IdleUp");
+  elif facingDir.y == 1:
+    play_animation("IdleDown");
+  
+func play_animation(animation_name):
+  if sprite.animation != animation_name:
+    sprite.play(animation_name);
+  
+  
