@@ -67,6 +67,20 @@ func manage_animations():
   elif facingDir.y == 1:
     play_animation("IdleDown");
   
+func _process(delta):
+    
+    if Input.is_action_just_pressed("interact"):
+      try_interact();
+      
+func try_interact():
+  rayCast.target_position = facingDir * interactDist;
+  
+  if rayCast.is_colliding():
+    if rayCast.get_collider() is CharacterBody2D:
+      rayCast.get_collider().take_damage(damage);
+    elif rayCast.get_collider().has_method("on_interact"):
+      rayCast.get_collider().on_interact(self);
+      
 func play_animation(animation_name):
   # Play animation if not already playing
   if sprite.animation != animation_name:
@@ -88,7 +102,9 @@ func level_up():
   curXp = overflowXp;
   
   curLevel += 1;
-  
+
+func give_gold(amount):
+  gold += amount;
 
 func take_damage(dmgToTake):
   curHp -= dmgToTake;

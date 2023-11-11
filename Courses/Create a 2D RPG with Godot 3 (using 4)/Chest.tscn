@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddu6h8kgg23ld"]
+
+[ext_resource type="Texture2D" uid="uid://brdo0wd8ynymn" path="res://Sprites/Tiles/rpgTile163.png" id="1_ibwca"]
+[ext_resource type="Script" path="res://Chest.gd" id="1_surxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gvgd"]
+size = Vector2(42, 47)
+
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_surxi")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibwca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_1gvgd")
