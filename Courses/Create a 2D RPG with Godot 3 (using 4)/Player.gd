@@ -20,18 +20,24 @@ var facingDir : Vector2 = Vector2();
 @onready var rayCast = get_node("RayCast2D");
 
 func _physics_process(delta):
-  vel = Vector2();
+  velocity = Vector2();
   
   # inputs
   if Input.is_action_pressed("move_up"):
-    vel.y -= 1;
+    velocity.y -= 1;
     facingDir = Vector2(0, -1);
   if Input.is_action_pressed("move_down"):
-    vel.y += 1;
+    velocity.y += 1;
     facingDir = Vector2(0, 1);
   if Input.is_action_pressed("move_left"):
-    vel.x -=1;
+    velocity.x -= 1;
     facingDir = Vector2(-1, 0);
   if Input.is_action_pressed("move_right"):
-    vel.x +=1;
+    velocity.x += 1;
     facingDir = Vector2(1, 0);
+  
+  velocity = velocity.normalized();
+  velocity *= moveSpeed; # Apply moveSpeed to velocity
+  
+  # Move the player
+  move_and_slide();
