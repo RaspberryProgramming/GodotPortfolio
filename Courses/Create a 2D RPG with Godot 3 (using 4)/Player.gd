@@ -43,9 +43,11 @@ func _physics_process(delta):
   # Move the player
   move_and_slide();
   
+  # Apply animation to player based on current movement
   manage_animations();
 
 func manage_animations():
+  # Movement Animations
   if velocity.x > 0:
     play_animation("MoveRight");
   elif velocity.x < 0:
@@ -55,6 +57,7 @@ func manage_animations():
   elif velocity.y > 0:
     play_animation("MoveDown");
     
+  # Idle Animations
   elif facingDir.x == 1:
     play_animation("IdleRight");
   elif facingDir.x == -1:
@@ -65,6 +68,7 @@ func manage_animations():
     play_animation("IdleDown");
   
 func play_animation(animation_name):
+  # Play animation if not already playing
   if sprite.animation != animation_name:
     sprite.play(animation_name);
   
