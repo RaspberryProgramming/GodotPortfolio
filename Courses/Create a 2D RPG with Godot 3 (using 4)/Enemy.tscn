@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://belrc7deuchj"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_38l0x"]
+[ext_resource type="Texture2D" uid="uid://c0vr1c68mi6at" path="res://Sprites/Player/player_s_0.png" id="1_l0j53"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sis5e"]
+radius = 20.0
+height = 54.0
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_38l0x")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.317647, 0.2, 1)
+texture = ExtResource("1_l0j53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sis5e")
+
+[node name="Timer" type="Timer" parent="."]

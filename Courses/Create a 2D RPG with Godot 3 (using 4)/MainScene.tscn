@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy5qf3gsbnhgt"]
+[gd_scene load_steps=4 format=3 uid="uid://dy5qf3gsbnhgt"]
 
 [ext_resource type="PackedScene" uid="uid://da37uadb4hsbl" path="res://Player.tscn" id="1_3k5fs"]
 [ext_resource type="TileSet" uid="uid://cikdsudyjemgs" path="res://TileSet.tres" id="1_d2nak"]
+[ext_resource type="PackedScene" uid="uid://belrc7deuchj" path="res://Enemy.tscn" id="2_i8rdp"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -14,6 +15,8 @@ layer_0/tile_data = PackedInt32Array(-1, 16, 0, 65535, 33, 0, 0, 16, 0, -65536, 
 tile_set = ExtResource("1_d2nak")
 format = 2
 layer_0/tile_data = PackedInt32Array(589825, 63, 0, 589824, 63, 0, 524288, 45, 0, 589826, 63, 0, 589827, 63, 0, 589828, 63, 0, 589829, 63, 0, 589830, 63, 0, 589831, 63, 0, 589832, 63, 0, 589833, 63, 0, 589834, 63, 0, 589835, 63, 0, 589836, 63, 0, 589837, 63, 0, 589838, 63, 0, 589839, 63, 0, 589842, 63, 0, 327689, 45, 0, 131086, 49, 0, 196622, 56, 0, 196615, 45, 0, 262154, 45, 0, 524287, 45, 0, 655359, 63, 0, 655358, 63, 0, 655362, 45, 0, 655374, 49, 0, 917507, 56, 0, 917518, 56, 0, 720910, 56, 0, 851976, 56, 0, 1179645, 56, 0, 1114109, 49, 0, 851971, 49, 0, 786440, 49, 0, 851982, 49, 0, 589843, 63, 0, 589844, 63, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("2_i8rdp")]
 
 [node name="Player" parent="." instance=ExtResource("1_3k5fs")]
 position = Vector2(96, 87)
