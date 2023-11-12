@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqqnkas7tvgol"]
+
+[ext_resource type="PackedScene" uid="uid://cq7at4b1xxau7" path="res://Models/Sword.dae" id="1_vljha"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ol6am"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fe2u1"]
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Model" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ol6am")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fe2u1")
+
+[node name="CameraOrbit" type="Node3D" parent="."]
+transform = Transform3D(1, -0.000373269, 5.20681e-05, 0.000373286, 1, -0.00033784, -5.19507e-05, 0.000337858, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrbit"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -5)
+
+[node name="WeaponHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.035)
+
+[node name="Sword" parent="WeaponHolder" instance=ExtResource("1_vljha")]
+transform = Transform3D(-4.63629e-09, 4.63629e-09, 0.15, 0.106066, 0.106066, 0, -0.106066, 0.106066, -6.55671e-09, 0, 0, 0)
+
+[node name="AttackRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0.6)
+target_position = Vector3(0, 0, 1.5)
