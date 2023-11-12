@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqqnkas7tvgol"]
+[gd_scene load_steps=6 format=3 uid="uid://bqqnkas7tvgol"]
 
+[ext_resource type="Script" path="res://Player.gd" id="1_7g12g"]
 [ext_resource type="Script" path="res://CameraOrbit.gd" id="1_7pmw0"]
 [ext_resource type="PackedScene" uid="uid://cq7at4b1xxau7" path="res://Models/Sword.dae" id="1_vljha"]
 
@@ -8,6 +9,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fe2u1"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_7g12g")
 
 [node name="Model" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
