@@ -51,3 +51,12 @@ func _physics_process(delta):
 # called when we collect a coin
 func give_gold(amount):
   gold += amount;
+
+func take_damage(damageToTake):
+  curHp -= damageToTake;
+  
+  if curHp <= 0:
+    die();
+    
+func die():
+  get_tree().reload_current_scene();
