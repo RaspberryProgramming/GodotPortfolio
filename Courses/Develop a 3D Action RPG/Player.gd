@@ -48,3 +48,6 @@ func _physics_process(delta):
   # move along the current velocity
   move_and_slide();
   
+# called when we collect a coin
+func give_gold(amount):
+  gold += amount;
