@@ -15,6 +15,11 @@ var gravity : float = 20.0;
 
 @onready var camera = get_node("CameraOrbit");
 @onready var attackRayCast = get_node("AttackRayCast");
+@onready var swordAnim = get_node("WeaponHolder/SwordAnimator");
+
+func _process(delta):
+  if Input.is_action_just_pressed("attack"):
+    try_attack();
 
 func _physics_process(delta):
   
@@ -47,7 +52,20 @@ func _physics_process(delta):
   
   # move along the current velocity
   move_and_slide();
+
+func try_attack():
+  if Time.get_ticks_msec() - lastAttackTime < attackRate * 1000:
+    return;
   
+  lastAttackTime = Time.get_ticks_msec();
+  
+  swordAnim.stop()
+  swordAnim.play("attack");
+  
+  if attackRayCast.is_colliding():
+    if attackRayCast.get_collider().has_method("take_damage"):
+      attackRayCast.get_collider().take_damage(damage);
+
 # called when we collect a coin
 func give_gold(amount):
   gold += amount;

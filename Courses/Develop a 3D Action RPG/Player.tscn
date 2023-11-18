@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqqnkas7tvgol"]
+[gd_scene load_steps=9 format=3 uid="uid://bqqnkas7tvgol"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7g12g"]
 [ext_resource type="Script" path="res://CameraOrbit.gd" id="1_7pmw0"]
@@ -7,6 +7,43 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ol6am"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fe2u1"]
+
+[sub_resource type="Animation" id="Animation_acb4m"]
+resource_name = "attack"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.349066, 0, 0), Vector3(0.872665, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g6dqp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1asn"]
+_data = {
+"RESET": SubResource("Animation_g6dqp"),
+"attack": SubResource("Animation_acb4m")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7g12g")
@@ -31,6 +68,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 0.035)
 
 [node name="Sword" parent="WeaponHolder" instance=ExtResource("1_vljha")]
 transform = Transform3D(-4.63629e-09, 4.63629e-09, 0.15, 0.106066, 0.106066, 0, -0.106066, 0.106066, -6.55671e-09, 0, 0, 0)
+
+[node name="SwordAnimator" type="AnimationPlayer" parent="WeaponHolder"]
+libraries = {
+"": SubResource("AnimationLibrary_q1asn")
+}
 
 [node name="AttackRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1, 0.6)
