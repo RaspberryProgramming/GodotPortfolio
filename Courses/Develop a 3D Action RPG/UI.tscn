@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqs7g7q1w8os5"]
+[gd_scene load_steps=5 format=3 uid="uid://bqs7g7q1w8os5"]
 
+[ext_resource type="Script" path="res://UI.gd" id="1_78omr"]
 [ext_resource type="Texture2D" uid="uid://b5fcm1t15kf4v" path="res://UI/UI_WhiteSquare.png" id="1_ynncb"]
 [ext_resource type="FontFile" uid="uid://dysiolhiw4hfr" path="res://Font/Ubuntu-Regular.ttf" id="2_yo4jd"]
 
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_78omr")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 layout_mode = 1

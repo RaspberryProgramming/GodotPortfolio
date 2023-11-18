@@ -280,6 +280,10 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Models/NaturePack074/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_i8r5d")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("13_upmxw")]
+
 [node name="Player" parent="." instance=ExtResource("10_h6voe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
@@ -305,7 +309,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72744, 6.53545, 10.2567)
 
 [node name="Enemy" parent="." instance=ExtResource("12_aca4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34708, 1.39904, -0.145654)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" parent="CanvasLayer" instance=ExtResource("13_upmxw")]

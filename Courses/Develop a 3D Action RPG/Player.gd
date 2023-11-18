@@ -16,6 +16,12 @@ var gravity : float = 20.0;
 @onready var camera = get_node("CameraOrbit");
 @onready var attackRayCast = get_node("AttackRayCast");
 @onready var swordAnim = get_node("WeaponHolder/SwordAnimator");
+@onready var ui = get_node("/root/MainScene/CanvasLayer/UI");
+
+func _ready():
+  # Initialize UI
+  ui.update_health_bar(curHp, maxHp);
+  ui.update_gold_text(gold);
 
 func _process(delta):
   if Input.is_action_just_pressed("attack"):
@@ -69,9 +75,12 @@ func try_attack():
 # called when we collect a coin
 func give_gold(amount):
   gold += amount;
+  ui.update_gold_text(gold);
 
 func take_damage(damageToTake):
   curHp -= damageToTake;
+  
+  ui.update_health_bar(curHp, maxHp);
   
   if curHp <= 0:
     die();
