@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bkgi6hrf5xqkd"]
+[gd_scene load_steps=36 format=3 uid="uid://bkgi6hrf5xqkd"]
 
 [ext_resource type="ArrayMesh" uid="uid://bfu86mk7kt6nw" path="res://Models/Environment/naturePack_001.obj" id="1_0c4fx"]
 [ext_resource type="ArrayMesh" uid="uid://cpc6oxc4nia6y" path="res://Models/Environment/naturePack_019.obj" id="2_01vfe"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bqqnkas7tvgol" path="res://Player.tscn" id="10_h6voe"]
 [ext_resource type="PackedScene" uid="uid://cdt8c83kdv2ej" path="res://GoldCoin.tscn" id="11_s63wy"]
 [ext_resource type="PackedScene" uid="uid://bbjb7o6ep4iod" path="res://Enemy.tscn" id="12_aca4h"]
+[ext_resource type="PackedScene" uid="uid://bqs7g7q1w8os5" path="res://UI.tscn" id="13_upmxw"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8wftt"]
 data = PackedVector3Array(0, 0, 0, 3, 0.3, 0, 3, 0, 0, 3, 0.3, 0, 0, 0, 0, 0, 0.3, 0, 0, 0.3, -3, 3, 0.3, 0, 0, 0.3, 0, 3, 0.3, 0, 0, 0.3, -3, 3, 0.3, -3, 3, 0, -3, 3, 0.3, 0, 3, 0.3, -3, 3, 0.3, 0, 3, 0, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, -3, 0, 0, -3, 0, 0.3, -3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0.3, -3, 0, 0.3, 0, 3, 0, -3, 0, 0.3, -3, 0, 0, -3, 0, 0.3, -3, 3, 0, -3, 3, 0.3, -3)
@@ -304,3 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72744, 6.53545, 10.2567)
 
 [node name="Enemy" parent="." instance=ExtResource("12_aca4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34708, 1.39904, -0.145654)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("13_upmxw")]

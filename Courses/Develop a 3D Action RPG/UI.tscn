@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqs7g7q1w8os5"]
+
+[ext_resource type="Texture2D" uid="uid://b5fcm1t15kf4v" path="res://UI/UI_WhiteSquare.png" id="1_ynncb"]
+[ext_resource type="FontFile" uid="uid://dysiolhiw4hfr" path="res://Font/Ubuntu-Regular.ttf" id="2_yo4jd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x32ac"]
+font = ExtResource("2_yo4jd")
+font_size = 30
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -40.0
+offset_right = 216.0
+offset_bottom = -15.0
+grow_vertical = 0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_ynncb")
+texture_progress = ExtResource("1_ynncb")
+tint_under = Color(0.184314, 0.184314, 0.184314, 1)
+tint_progress = Color(0.85098, 0, 0.0392157, 1)
+
+[node name="GoldText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -88.0
+offset_right = 216.0
+offset_bottom = -51.0
+text = "Gold: 500"
+label_settings = SubResource("LabelSettings_x32ac")
